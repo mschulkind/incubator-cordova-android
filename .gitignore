@@ -4,6 +4,7 @@ gen
 assets/www/cordova.js
 local.properties
 framework/proguard.cfg
+framework/proguard-project.txt
 framework/cordova.jar
 framework/cordova-*.jar
 framework/phonegap-*.jar
