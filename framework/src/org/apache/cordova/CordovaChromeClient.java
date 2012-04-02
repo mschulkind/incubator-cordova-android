@@ -282,20 +282,15 @@ public class CordovaChromeClient extends WebChromeClient {
         }
     }
 
-    // console.log in api level 7: http://developer.android.com/guide/developing/debug-tasks.html
-    @Override
-    public void onConsoleMessage(String message, int lineNumber, String sourceID)
-    {       
-        LOG.d(TAG, "%s: Line %d : %s", sourceID, lineNumber, message);
-        super.onConsoleMessage(message, lineNumber, sourceID);
-    }
-    
     @Override
     public boolean onConsoleMessage(ConsoleMessage consoleMessage)
     {       
-        if(consoleMessage.message() != null)
+        if(consoleMessage.message() != null) {
             LOG.d(TAG, consoleMessage.message());
-        return super.onConsoleMessage(consoleMessage);
+            return true;
+        } else {
+            return super.onConsoleMessage(consoleMessage);
+        }
     }
 
     @Override
