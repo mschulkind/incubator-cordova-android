@@ -164,6 +164,7 @@ public class PluginManager {
 									ctx.sendJavascript(cr.toErrorCallbackString(callbackId));
 								}
 							} catch (Exception e) {
+                e.printStackTrace();
 								PluginResult cr = new PluginResult(PluginResult.Status.ERROR, e.getMessage());
 								ctx.sendJavascript(cr.toErrorCallbackString(callbackId));
 							}
@@ -261,7 +262,7 @@ public class PluginManager {
      * @param className				The class of the loaded plugin.
      * @return
      */
-    private IPlugin getPlugin(String pluginName) {
+    public IPlugin getPlugin(String pluginName) {
 		String className = this.services.get(pluginName);
     	if (this.plugins.containsKey(className)) {
     		return this.plugins.get(className);

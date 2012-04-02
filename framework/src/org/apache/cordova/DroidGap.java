@@ -157,7 +157,7 @@ public class DroidGap extends Activity implements CordovaInterface {
     protected LinearLayout root;
     public boolean bound = false;
     public CallbackServer callbackServer;
-    protected PluginManager pluginManager;
+    public PluginManager pluginManager;
     protected boolean cancelLoadUrl = false;
     protected ProgressDialog spinnerDialog = null;
 
