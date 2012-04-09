@@ -66,7 +66,6 @@ public class PluginManager {
 	 * Re-init when loading a new HTML page into webview.
 	 */
 	public void reinit() {
-	    
 	    // Stop plugins on current HTML page and discard
 	    this.onPause(false);
 	    this.onDestroy();
@@ -135,6 +134,7 @@ public class PluginManager {
 	public String exec(final String service, final String action, final String callbackId, final String jsonArgs, final boolean async) {
 		PluginResult cr = null;
 		boolean runAsync = async;
+    //System.out.println(service+"."+action+"("+jsonArgs+")");
 		try {
 			final JSONArray args = new JSONArray(jsonArgs);
 			final IPlugin plugin = this.getPlugin(service); 
