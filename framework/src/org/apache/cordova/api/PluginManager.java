@@ -138,6 +138,7 @@ public class PluginManager {
 		try {
 			final JSONArray args = new JSONArray(jsonArgs);
 			final IPlugin plugin = this.getPlugin(service); 
+      //System.out.println(service+"."+action+"("+args.toString(2)+")");
 			final CordovaInterface ctx = this.ctx;
 			if (plugin != null) {
 				runAsync = async && !plugin.isSynch(action);
