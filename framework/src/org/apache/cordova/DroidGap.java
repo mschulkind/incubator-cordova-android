@@ -184,7 +184,7 @@ public class DroidGap extends Activity implements CordovaInterface {
     protected boolean activityResultKeepRunning;
 
     // Flag indicates that a loadUrl timeout occurred
-    int loadUrlTimeout = 0;
+    private int loadUrlTimeout = 0;
     
     // Default background color for activity 
     // (this is not the color for the webview, which is set in HTML)
@@ -430,6 +430,13 @@ public class DroidGap extends Activity implements CordovaInterface {
         
         // If keepRunning
         this.keepRunning = this.getBooleanProperty("keepRunning", true);
+    }
+
+    /**
+     * Clears any pending url timeout watchdogs.
+     */
+    public void resetLoadUrlTimeout() {
+      loadUrlTimeout++;
     }
     
     /**

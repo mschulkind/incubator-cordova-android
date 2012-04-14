@@ -211,7 +211,7 @@ public class CordovaWebViewClient extends WebViewClient {
         }
 
         // Clear timeout flag
-        this.ctx.loadUrlTimeout++;
+        this.ctx.resetLoadUrlTimeout();
 
         // Try firing the onNativeReady event in JS. If it fails because the JS is
         // not loaded yet then just set a flag so that the onNativeReady can be fired
@@ -263,7 +263,7 @@ public class CordovaWebViewClient extends WebViewClient {
         LOG.d(TAG, "DroidGap: GapViewClient.onReceivedError: Error code=%s Description=%s URL=%s", errorCode, description, failingUrl);
 
         // Clear timeout flag
-        this.ctx.loadUrlTimeout++;
+        this.ctx.resetLoadUrlTimeout();
 
         // Stop "app loading" spinner if showing
         this.ctx.spinnerStop();
